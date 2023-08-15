@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <nav className="w-1/2 mx-auto pt-6">
-          <h1 className="w-1/2 mx-auto text-center mb-2">M'KENNA & PATRICK</h1>
+          <h1 className="w-1/2 mx-auto text-center mb-2">MKENNA & PATRICK</h1>
           <br />
           <div className="flex justify-evenly">
             <a className="hover:underline underline-offset-8" href="/">Home</a>
