@@ -19,7 +19,9 @@ export default function Home() {
         style={{width: '100%', height: '100%'}}
       />
       <div className='container mx-auto text-center mt-4'>
-        <h1 className='text-2xl mb-3'>Hello world</h1>
+        <h1 className='text-2xl mb-3'>Mkenna Daily</h1>
+        <h1 className='text-lg mb-3'>&</h1>
+        <h1 className='text-2xl mb-3'>Patrick Gallagher</h1>
         <p>This is a bunch of text that I am typing to see what happens with this container</p>
       </div>
     </div>
