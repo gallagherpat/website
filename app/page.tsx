@@ -1,6 +1,13 @@
-import Image from 'next/image'
+"use client"
+import Image from 'next/image';
+import CountDownTimer from './components/countDownComponent';
 
 export default function Home() {
+  const weddingDate = new Date("2024-09-29");
+  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+
+  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
     <div className='relative w-full h-[480px] md:h-[560px] mt-4'>
@@ -19,10 +26,11 @@ export default function Home() {
         style={{width: '100%', height: '100%'}}
       />
       <div className='container mx-auto text-center mt-4'>
-        <h1 className='text-2xl mb-3'>Mkenna Daily</h1>
+        <h1 className='text-2xl mb-3'>MKenna Daily</h1>
         <h1 className='text-lg mb-3'>&</h1>
         <h1 className='text-2xl mb-3'>Patrick Gallagher</h1>
-        <p>This is a bunch of text that I am typing to see what happens with this container</p>
+        <h2>September 29th, 2024</h2>
+        <CountDownTimer targetDate={weddingDate}/>
       </div>
     </div>
     </main>
