@@ -17,14 +17,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="w-1/2 mx-auto pt-6">
-          <h1 className="w-1/2 mx-auto text-center mb-2">MKENNA & PATRICK</h1>
+      <h1 className="w-1/2 mx-auto text-center mt-6">MKENNA & PATRICK</h1>
+        <nav className="sticky top-0 w-full mx-auto z-50 bg-inherit pb-4">
           <br />
-          <div className="flex justify-evenly">
+          <div className="flex justify-evenly w-3/4 md:w-1/2 mx-auto">
             <a className="hover:underline underline-offset-8" href="/">Home</a>
+            |
             <a className="hover:underline underline-offset-8" href="/">Wedding Party</a>
+            |
             <a className="hover:underline underline-offset-8" href="/">Schedule</a>
+            |
             <a className="hover:underline underline-offset-8" href="/">Gallery</a>
+            |
             <a className="hover:underline underline-offset-8" href="/">RSVP</a>
           </div>
           </nav>
