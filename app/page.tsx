@@ -6,13 +6,10 @@ import TheProposal from './components/theProposoal';
 
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
-  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
-  const NOW_IN_MS = new Date().getTime();
 
-  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-    <div className='relative w-full h-[480px] md:h-[560px] mt-4'>
+    <div className='relative w-full h-[480px] md:h-[560px]'>
       <span className='absolute z-10 mt-8 ml-4 text-3xl'>
         Meet the Bride 
       <br/> 
@@ -37,7 +34,6 @@ export default function Home() {
         <br />
         <br />
         <TheProposal/>
-        <br />
         <br />
         <br />
         <br />
