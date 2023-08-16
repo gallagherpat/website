@@ -1,6 +1,8 @@
 "use client"
 import Image from 'next/image';
 import CountDownTimer from './components/countDownComponent';
+import HowWeMet from './components/howWeMet';
+import TheProposal from './components/theProposoal';
 
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
@@ -31,6 +33,14 @@ export default function Home() {
         <h1 className='text-2xl mb-3'>Patrick Gallagher</h1>
         <h2>September 29th, 2024</h2>
         <CountDownTimer targetDate={weddingDate}/>
+        <HowWeMet/>
+        <br />
+        <br />
+        <TheProposal/>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </div>
     </main>
