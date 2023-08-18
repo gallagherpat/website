@@ -1,6 +1,6 @@
 //@ts-nocheck
 export default function Section (props) {
-    const main = "w-3/4 mx-auto pt-4";
+    const main = "w-3/4 mx-auto pt-8 12";
     const h1 = "text-xl pb-3";
     if(props.title == "proposal"){
         return (

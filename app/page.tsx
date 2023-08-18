@@ -24,13 +24,16 @@ export default function Home() {
         sizes='100vw'
         style={{width: '100%', height: '100%'}}
       />
-      <div className='container mx-auto text-center pt-4'>
-        <h1 className='text-2xl pb-3'>MKenna Daily</h1>
-        <h1 className='text-lg pb-3'>&</h1>
-        <h1 className='text-2xl pb-3'>Patrick Gallagher</h1>
-        <h2>Septepber 29th, 2024</h2>
+      <div className='container mx-auto text-center pt-6'>
+        <section className='mt-4'>
+          <h1 className='text-2xl pb-3'>MKenna Daily</h1>
+          <h1 className='text-lg pb-3'>- & -</h1>
+          <h1 className='text-2xl pb-3'>Patrick Gallagher</h1>
+        </section>
+        <h2 className='mt-4'>Septepber 29th, 2024</h2>
         <CountDownTimer targetDate={weddingDate}/>
-        <Section title="met"/>
+        <Section title="met"/>'
+        <br />
         <Section title="proposal"/>
       </div>
     </div>
