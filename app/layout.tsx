@@ -13,7 +13,16 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+})
+{
+  // function currentPage(href: string) {
+  //   let path = usePathname();
+  //   if(href == path){
+  //     return "underline underline-offset-8"
+  //   }else{
+  //     return "hover:underline underline-offset-8"
+  //   }
+  // }
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -27,9 +36,9 @@ export default function RootLayout({
             |
             <a className="hover:underline underline-offset-8" href="/schedule">Schedule</a>
             |
-            <a className="hover:underline underline-offset-8" href="/">Gallery</a>
+            <a className="hover:underline underline-offset-8" href="/gallery">Gallery</a>
             |
-            <a className="hover:underline underline-offset-8" href="/">RSVP</a>
+            <a className="hover:underline underline-offset-8" href="/rsvp">RSVP</a>
           </div>
           </nav>
         {children}
