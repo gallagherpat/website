@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex min-h-screen mb-72 flex-col items-center justify-between">
+      <div className="flex min-h-screen mb-96 flex-col items-center justify-between">
       <div className='relative w-full h-[480px] md:h-[560px]'>
       <span className='absolute text-white z-10 pt-8 ml-4 text-3xl'>
         Meet the Bride 

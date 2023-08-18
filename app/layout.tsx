@@ -28,20 +28,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={lato.className + " min-h-screen"}>
+      <body className={lato.className + " min-h-screen scroll-smooth"}>
       <h1 className="w-full tracking-wider text-2xl bg-white bg-opacity-60 mx-auto text-center pt-6">M'KENNA & PATRICK</h1>
         <nav className="sticky top-0 w-full mx-auto z-30 bg-white bg-opacity-60 backdrop-blur-lg pb-4">
           <br />
            <Nav/>
-            {/* <a className="hover:underline underline-offset-8" href="/">Home</a>
-            |
-            <a className="hover:underline underline-offset-8" href="/party">Wedding Party</a>
-            |
-            <a className="hover:underline underline-offset-8" href="/schedule">Schedule</a>
-            |
-            <a className="hover:underline underline-offset-8" href="/gallery">Gallery</a>
-            |
-            <a className="hover:underline underline-offset-8" href="/rsvp">RSVP</a> */}
           </nav>
         {children}
         </body>
