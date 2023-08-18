@@ -26,7 +26,7 @@ export default function Home() {
       />
       <div className='container mx-auto text-center pt-6'>
         <section className='mt-4'>
-          <h1 className='text-2xl pb-3'>MKenna Daily</h1>
+          <h1 className='text-2xl pb-3'>M'Kenna Daily</h1>
           <h1 className='text-lg pb-3'>- & -</h1>
           <h1 className='text-2xl pb-3'>Patrick Gallagher</h1>
         </section>
