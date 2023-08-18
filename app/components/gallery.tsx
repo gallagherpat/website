@@ -1,8 +1,12 @@
 "use client"
 import Image from "next/image"
 import React from 'react';
-
-export default function Gallery(props){
+type Props = {
+    state: Function,
+    image: Function
+}
+export default function Gallery(props: Props){
+    console.log(props);
 const setModal = props.state;
 const setImage = props.image;
 
