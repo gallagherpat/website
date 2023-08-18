@@ -7,9 +7,10 @@ export default function Home() {
   const weddingDate = new Date("2024-09-29");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-    <div className='relative w-full h-[480px] md:h-[560px]'>
-      <span className='absolute z-10 mt-8 ml-4 text-3xl'>
+    <main>
+      <div className="flex min-h-screen mb-72 flex-col items-center justify-between">
+      <div className='relative w-full h-[480px] md:h-[560px]'>
+      <span className='absolute text-white z-10 pt-8 ml-4 text-3xl'>
         Meet the Bride 
       <br/> 
         and the Goof..
@@ -23,21 +24,18 @@ export default function Home() {
         sizes='100vw'
         style={{width: '100%', height: '100%'}}
       />
-      <div className='container mx-auto text-center mt-4'>
-        <h1 className='text-2xl mb-3'>MKenna Daily</h1>
-        <h1 className='text-lg mb-3'>&</h1>
-        <h1 className='text-2xl mb-3'>Patrick Gallagher</h1>
-        <h2>September 29th, 2024</h2>
+      <div className='container mx-auto text-center pt-4'>
+        <h1 className='text-2xl pb-3'>MKenna Daily</h1>
+        <h1 className='text-lg pb-3'>&</h1>
+        <h1 className='text-2xl pb-3'>Patrick Gallagher</h1>
+        <h2>Septepber 29th, 2024</h2>
         <CountDownTimer targetDate={weddingDate}/>
         <Section title="met"/>
-        <br />
-        <br />
         <Section title="proposal"/>
-        <br />
-        <br />
-        <br />
       </div>
     </div>
+    </div>
+
     </main>
   )
 }
