@@ -1,7 +1,9 @@
+"use client"
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Lato } from "next/font/google"
+import { usePathname } from "next/navigation"
 
 const lato = Lato({ 
   weight: "400",
@@ -22,14 +24,18 @@ export default function RootLayout({
   children: React.ReactNode
 })
 {
-  // function currentPage(href: string) {
-  //   let path = usePathname();
-  //   if(href == path){
-  //     return "underline underline-offset-8"
-  //   }else{
-  //     return "hover:underline underline-offset-8"
-  //   }
-  // }
+  function currentPage(href: string) {
+    let path = usePathname();
+    console.log(path)
+    if(href == path){
+      return "underline underline-offset-8"
+    }else{
+      return "hover:underline underline-offset-8"
+    }
+  }
+
+  currentPage("/")
+
   return (
     <html lang="en">
       <body className={lato.className + " min-h-screen"}>
@@ -37,7 +43,16 @@ export default function RootLayout({
         <nav className="sticky top-0 w-full mx-auto z-30 bg-white bg-opacity-60 backdrop-blur-lg pb-4">
           <br />
           <div className="flex justify-evenly w-3/4 md:w-1/2 mx-auto">
-            <a className="hover:underline underline-offset-8" href="/">Home</a>
+            <a className={currentPage("/")} href="/">Home</a>
+            |
+            <a className={currentPage("/party")} href="/party">Wedding Party</a>
+            |
+            <a className={currentPage("/schedule")} href="/schedule">Schedule</a>
+            |
+            <a className={currentPage("/gallery")} href="/gallery">Gallery</a>
+            |
+            <a className={currentPage("/rsvp")} href="/rsvp">RSVP</a>
+            {/* <a className="hover:underline underline-offset-8" href="/">Home</a>
             |
             <a className="hover:underline underline-offset-8" href="/party">Wedding Party</a>
             |
@@ -45,7 +60,7 @@ export default function RootLayout({
             |
             <a className="hover:underline underline-offset-8" href="/gallery">Gallery</a>
             |
-            <a className="hover:underline underline-offset-8" href="/rsvp">RSVP</a>
+            <a className="hover:underline underline-offset-8" href="/rsvp">RSVP</a> */}
           </div>
           </nav>
         {children}
