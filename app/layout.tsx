@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <h1 className="w-1/2 mx-auto text-center mt-6">MKENNA & PATRICK</h1>
-        <nav className="sticky top-0 w-full mx-auto z-50 bg-inherit pb-4">
+        <nav className="sticky top-0 w-full mx-auto z-30 bg-inherit pb-4">
           <br />
           <div className="flex justify-evenly w-3/4 md:w-1/2 mx-auto">
             <a className="hover:underline underline-offset-8" href="/">Home</a>
