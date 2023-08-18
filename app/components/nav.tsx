@@ -3,8 +3,9 @@ import React from "react";
 import { usePathname } from "next/navigation"
 
 export default function Nav() {
+    let path = usePathname();
+
     function currentPage(href: string) {
-        let path = usePathname();
         console.log(path)
         if(href == path){
           return "underline underline-offset-8"
