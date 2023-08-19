@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.addeventatc {
+  color:#ffffff!important;
+  background-color:#3f3f46!important;
+}
+.addeventatc:hover {
+  background-color:rgb(24, 24, 27)!important;
+  filter:brightness(105%);
+}
+
+.addeventatc:active {
+  background-color:#3f3f46!important;
+  filter:brightness(110%);
+}
+
+.addeventatc .addeventatc_icon {
+  background:url(https://cdn.addevent.com/libs/imgs/icon-calendar-fff-t1.svg) no-repeat!important;background-size:24px 24px!important;
+}
