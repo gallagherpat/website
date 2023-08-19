@@ -13,7 +13,7 @@ export default function ScheduleCard(props){
     if(path == "/schedule"){
         return(
             <main className={border}>
-                <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+                <script defer type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js"></script>
 
                 <link rel="stylesheet" href="https://cdn.addevent.com/libs/atc/themes/fff-theme-2/theme.css" type="text/css" media="all" />
 
