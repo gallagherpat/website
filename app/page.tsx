@@ -6,6 +6,16 @@ import Section from './components/section';
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
 
+  const users = async function getUsers() {
+    const req = await fetch('/api/getUsers');
+    const res = await req.json();
+    const data = await res;
+
+    console.log(data);
+
+    return users
+  }
+
   return (
     <main>
       <div className="flex min-h-screen mb-96 flex-col items-center justify-between">
@@ -25,6 +35,7 @@ export default function Home() {
         style={{width: '100%', height: '100%'}}
       />
       <div className='container mx-auto text-center pt-6'>
+        {/* <button onClick={users} className='w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white'>CLICK ME</button> */}
         <section className='mt-4'>
           <h1 className='text-2xl pb-3'>M'Kenna Daily</h1>
           <h1 className='text-lg pb-3'>- & -</h1>
