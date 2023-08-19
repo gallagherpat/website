@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 export default function ScheduleCard(props){
     let path = usePathname();
     let border: string;
+    const data = props.data;
     const object = {
         "data": [
             {
@@ -46,12 +47,12 @@ export default function ScheduleCard(props){
                 <link rel="stylesheet" href="https://cdn.addevent.com/libs/atc/themes/fff-theme-2/theme.css" type="text/css" media="all" />
 
                 
-                <h2 className="text-2xl mb-6">{object.data[props.id].event}</h2>
-                <h1 className="text-xl mb-2">{object.data[props.id].date}</h1>
-                <h5 className="mb-6">{object.data[props.id].time}</h5>
-                <h4>{object.data[props.id].name}</h4>
-                <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu">{object.data[props.id].location}</a>
-                <p className="my-4">{object.data[props.id].description}</p>
+                <h2 className="text-2xl mb-6">{data.event}</h2>
+                <h1 className="text-xl mb-2">{data.date}</h1>
+                <h5 className="mb-6">{data.time}</h5>
+                <h4>{data.name}</h4>
+                <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu">{data.location}</a>
+                <p className="my-4">{data.description}</p>
                 <div className="text-white">
                     <a href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">Map</button></a>
 
@@ -64,17 +65,18 @@ export default function ScheduleCard(props){
         )
     }else if(path == "/rsvp"){
         const setModal = props.state;
+        const setCurrentCard = props.card;
         return(
             <main className={border}>
-                <h2 className="text-2xl mb-6">{object.data[props.id].event}</h2>
-                <h1 className="text-xl mb-2">{object.data[props.id].date}</h1>
-                <h5 className="mb-6">{object.data[props.id].time}</h5>
-                <h4>{object.data[props.id].name}</h4>
-                <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu">{object.data[props.id].location}</a>
-                <p className="my-4">{object.data[props.id].description}</p>
+                <h2 className="text-2xl mb-6">{data.event}</h2>
+                <h1 className="text-xl mb-2">{data.date}</h1>
+                <h5 className="mb-6">{data.time}</h5>
+                <h4>{data.name}</h4>
+                <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu">{data.location}</a>
+                <p className="my-4">{data.description}</p>
                 <div className="text-white">
-                    <button onClick={() => {setModal(false)}} className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">RSVP</button>
-                </div>
+                    <button onClick={() => {setModal(false); setCurrentCard(data.event)}} className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">RSVP</button>
+                </div>            
             </main>
         )
     }
