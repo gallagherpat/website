@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Profile(){
     return (
-        <main className="text-center mb-12">
+        <main className="text-center sm:mb-12 mb-4">
             <Image
             className="rounded-full mx-auto"
             src="/profile_pic_patrick.jpg"

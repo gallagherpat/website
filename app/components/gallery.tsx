@@ -11,7 +11,7 @@ const setModal = props.state;
 const setImage = props.image;
 
     return (
-        <main className="grid grid-cols-3 gap-3 mt-20">
+        <main className="grid grid-cols-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
             <button onClick={() => {setModal(true); setImage(2)}} className="row-span-2">
                 <Image
                 className="transition duration-150 ease-in-out rounded-lg object-cover h-full hover:scale-125 origin-top-left hover:z-10"

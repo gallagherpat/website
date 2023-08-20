@@ -3,6 +3,7 @@ import ScheduleCard from "../components/scheduleCard"
 import RSVP from "../components/rsvp"
 import React from "react";
 import { useState } from "react";
+import SubHeader from "../components/subHeader";
 
 const object = {
     "data": [
@@ -38,7 +39,10 @@ export default function Page() {
     const [currentCard, setCurrentCard] = useState('');
 
     return(
-        <main className="w-3/4 mx-auto mt-12 max-w-md">
+        <main className="w-3/4 mx-auto mt-6 sm:mt-12 max-w-md">
+            <div className="block sm:hidden">
+                <SubHeader/>
+            </div>
             <div style={{display: modal ? "none": "block"}} className="fixed inset-0 bg-opacity-70 bg-black z-50 w-screen h-screen justify-center">
                 <RSVP card={currentCard} state={setModal}/>
             </div>

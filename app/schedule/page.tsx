@@ -1,4 +1,5 @@
 import ScheduleCard from "../components/scheduleCard"
+import SubHeader from "../components/subHeader"
 
 const object = {
     "data": [
@@ -31,7 +32,10 @@ const object = {
 
 export default function Page() {
     return(
-        <main className="w-3/4 mx-auto mt-12 max-w-md">
+        <main className="w-3/4 mx-auto mt-6 sm:mt-12 max-w-md">
+            <div className="block sm:hidden">
+                <SubHeader/>
+            </div>
             <ScheduleCard data={object.data[0]}/>
             <ScheduleCard data={object.data[1]}/>
             <ScheduleCard data={object.data[2]} lastCard={true}/>
