@@ -1,8 +1,12 @@
+"use client"
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Lato } from "next/font/google"
 import Nav from "./components/nav"
+import Hamburger from "./components/hamburger"
+import React from "react"
+import { useState } from "react"
 
 const lato = Lato({ 
   weight: "400",
@@ -24,6 +28,7 @@ export default function RootLayout({
 })
 {
 
+  const [nav, setNav] = useState(false);
 
 
   return (
@@ -33,10 +38,19 @@ export default function RootLayout({
       <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
     </head>
       <body className={lato.className + " min-h-screen scroll-smooth"}>
-      <h1 className="w-full tracking-wider text-2xl bg-white bg-opacity-60 mx-auto text-center pt-6">M'KENNA & PATRICK</h1>
-        <nav className="sticky top-0 w-full mx-auto z-30 bg-white bg-opacity-60 backdrop-blur-lg pb-4">
-          <br />
-           <Nav/>
+      {/* <h1 className="w-full tracking-wider text-2xl bg-white sm:bg-opacity-60 mx-auto text-center pt-6 pb-4 sm:pb-0 drop-shadow-md">M'KENNA & PATRICK</h1> */}
+        <nav className="sticky top-0 w-full mx-auto z-60 sm:bg-white sm:bg-opacity-60 sm:backdrop-blur-lg sm:pb-4">
+            <header className="flex w-full bg-white px-4">
+              <h1 className="grow tracking-wider text-2xl pt-6 pb-4   drop-shadow-md">M'KENNA & PATRICK</h1>
+              <button onClick={() => {setNav(!nav)}}>HAM</button>
+            </header>
+          <br className="hidden sm:block" />
+           <div className="hidden sm:flex">
+            <Nav/>
+            </div>
+           <div style={{display: nav ? "block": "none"}} className="relative sm:hidden drop-shadow-md mt-4">
+            <Hamburger />
+            </div>
           </nav>
         {children}
         </body>
