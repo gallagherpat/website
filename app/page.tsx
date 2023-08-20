@@ -34,7 +34,7 @@ export default function Home() {
         sizes='100vw'
         style={{width: '100%', height: '100%'}}
       />
-      <div className='container mx-auto text-center pt-6'>
+      <div className='mx-auto text-center pt-6'>
         {/* <button onClick={users} className='w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white'>CLICK ME</button> */}
         <section className='mt-4'>
           <h1 className='text-3xl pb-3'>M'Kenna Daily</h1>
