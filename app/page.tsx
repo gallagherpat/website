@@ -6,15 +6,15 @@ import Section from './components/section';
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
 
-  const users = async function getUsers() {
-    const req = await fetch('/api/getUsers');
-    const res = await req.json();
-    const data = await res;
+  // const users = async function getUsers() {
+  //   const req = await fetch('/api/getUsers');
+  //   const res = await req.json();
+  //   const data = await res;
 
-    // console.log(data);
+  //   // console.log(data);
 
-    return users
-  }
+  //   return users
+  // }
 
   return (
     <main className="flex min-h-screen mb-96 flex-col items-center justify-between">
