@@ -6,7 +6,7 @@ export default function Nav() {
     let path = usePathname();
 
     function currentPage(href: string) {
-        console.log(path)
+        // console.log(path)
         if(href == path){
           return "underline underline-offset-8"
         }else{

@@ -6,7 +6,7 @@ type Props = {
     image: Function
 }
 export default function Gallery(props: Props){
-    console.log(props);
+    // console.log(props);
 const setModal = props.state;
 const setImage = props.image;
 

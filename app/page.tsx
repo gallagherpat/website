@@ -11,7 +11,7 @@ export default function Home() {
     const res = await req.json();
     const data = await res;
 
-    console.log(data);
+    // console.log(data);
 
     return users
   }
@@ -43,7 +43,8 @@ export default function Home() {
         </section>
         <h2 className='mt-4'>Septepber 29th, 2024</h2>
         <CountDownTimer targetDate={weddingDate}/>
-        <Section title="met"/>'
+        <Section title="met"/>
+        {/* <div className='bg-slate-300 h-[1px] mt-6'/> */}
         <br />
         <Section title="proposal"/>
       </div>
