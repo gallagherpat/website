@@ -10,7 +10,10 @@ export default function RSVP(props: Props){
     const currentCard = props.card;
     return(
         <main className="absolute inset-0 max-w-xl max-h-fit w-3/4 md:w-1/2 m-auto bg-slate-300 rounded-xl text-center">
-            <button onClick={() => {setModal(true)}} className="absolute top-0 right-0 mr-4 mt-2">X</button>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+            <button onClick={() => {setModal(true)}} className="absolute top-0 right-0 mr-4 mt-2">
+            <span className="material-symbols-outlined">close</span>
+            </button>
             <div className="my-6">
                 <div className="pb-2 text-lg">{currentCard}</div>
             <form className="mx-6" action={formAction}>
