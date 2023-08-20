@@ -2,7 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Lato } from "next/font/google"
-import Nav from "./components/nav"
+import NavBar from "./components/navBar"
 
 const lato = Lato({ 
   weight: "400",
@@ -33,11 +33,8 @@ export default function RootLayout({
       <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
     </head>
       <body className={lato.className + " min-h-screen scroll-smooth"}>
-      <h1 className="w-full tracking-wider text-2xl bg-white bg-opacity-60 mx-auto text-center pt-6">M'KENNA & PATRICK</h1>
-        <nav className="sticky top-0 w-full mx-auto z-30 bg-white bg-opacity-60 backdrop-blur-lg pb-4">
-          <br />
-           <Nav/>
-          </nav>
+      <h1 className="w-full tracking-wider text-2xl bg-white sm:bg-opacity-60 mx-auto text-center pt-6 pb-4 hidden sm:block sm:pb-0 drop-shadow-md">M'KENNA & PATRICK</h1>
+      <NavBar/>
         {children}
         </body>
     </html>

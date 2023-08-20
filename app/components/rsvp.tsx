@@ -10,7 +10,7 @@ export default function RSVP(props: Props){
     const currentCard = props.card;
     return(
         <main className="absolute inset-0 max-w-xl h-1/3 w-3/4 md:w-1/2 m-auto bg-slate-300 rounded-xl text-center">
-            <button onClick={() => {setModal(true); console.log("click")}} className="absolute top-0 right-0 mr-4 mt-2">X</button>
+            <button onClick={() => {setModal(true)}} className="absolute top-0 right-0 mr-4 mt-2">X</button>
             <div className="my-6">
                 <div className="pb-2 text-lg">{currentCard}</div>
             <form className="mx-6" action={formAction}>

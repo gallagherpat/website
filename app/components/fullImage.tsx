@@ -4,7 +4,7 @@ type Props = {
 }
 
 export default function FullImage(props: Props){
-    console.log(props);
+    // console.log(props);
     const image = props.image;
     const src = "/pictures/image (" + image + ").jpg"
     return(
