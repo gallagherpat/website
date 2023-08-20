@@ -14,7 +14,7 @@ const ExpiredNotice = () => {
   
   const ShowCounter = ({ days, hours, minutes, seconds }) => {
     return (
-      <div className="show-counter flex justify-evenly w-1/2 mx-auto mt-3">
+      <div className="show-counter text-lg flex justify-evenly w-1/2 mx-auto mt-3">
           <DateTimeDisplay value={days} type={'Days'} isDanger={days <= 3} />
           :
           <DateTimeDisplay value={hours} type={'Hours'} isDanger={false} />
