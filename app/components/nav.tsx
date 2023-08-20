@@ -14,7 +14,7 @@ export default function Nav() {
         }
       }
    return(
-    <main className="flex justify-evenly w-3/4 md:w-1/2 mx-auto">
+    <main className="sticky top-0 flex justify-evenly w-3/4 md:w-1/2 mx-auto">
         <a className={currentPage("/")} href="/">Home</a>
         |
         <a className={currentPage("/party")} href="/party">Wedding Party</a>

@@ -14,7 +14,7 @@ export default function Hamburger() {
         }
       }
     return (
-        <main className="absolute inset-x-0 top-0 flex flex-col justify-center text-center z-40 gap-4 bg-white mx-12 rounded-lg py-4">
+        <main className="absolute inset-x-0 top-4 flex flex-col justify-center text-center z-40 gap-4 bg-white mx-12 rounded-lg py-4">
         <a className={currentPage("/")} href="/">Home</a>
         <a className={currentPage("/party")} href="/party">Wedding Party</a>
         <a className={currentPage("/schedule")} href="/schedule">Schedule</a>
