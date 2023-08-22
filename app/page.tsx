@@ -11,7 +11,7 @@ export default function Home() {
   //   const res = await req.json();
   //   const data = await res;
 
-  //   // console.log(data);
+  //   console.log(data);
 
   //   return users
   // }
