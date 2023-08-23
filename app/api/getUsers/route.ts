@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
+    const env = process.env.NODE_ENV;
     const host = process.env.DB_HOST_DEV;
-    const token = process.env.API_KEY;
+    let token;
+    if(env == "production"){
+        token = process.env.API_KEY_PRODUCTION;
+    }else if(env == "development"){
+        token = process.env.API_KEY;
+    }
 
     let myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${token}`);
