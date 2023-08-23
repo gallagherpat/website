@@ -2,6 +2,9 @@
 import React from "react"
 import { useState } from "react"
 import EventRSVPButton from "./eventRSVPButton"
+import { render } from "@react-email/components"
+import StripeWelcomeEmail from "../react-email-starter/emails/stripe-welcome"
+import Confirmation from "../react-email-starter/emails/confirmation"
 
 //@ts-ignore
 export default function EventRSVP(props){
@@ -38,6 +41,22 @@ export default function EventRSVP(props){
 
     }
 
+    async function sendEmail() {
+        const req = await fetch(`/api/send-email`, {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                data: {
+                    email: "gallagherpatrick21@gmail.com",
+                    html: render(<Confirmation/>)
+                }
+            })
+        })
+        const res = await req.json()
+        const data = await res
+        console.log(data);
+    }
+
     return (
     <main>
         <div>
@@ -65,6 +84,8 @@ export default function EventRSVP(props){
             <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre>
         </div>
         <button className="w-48 h-12 mt-6 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={updateRSVP}>CLICK</button>
+        <br />
+        <button className="w-48 h-12 mt-6 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={sendEmail}>Send email</button>
     </main>
     )
 }
