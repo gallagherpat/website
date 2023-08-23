@@ -4,12 +4,16 @@ import { redirect, useRouter } from "next/navigation";
 // import { NextResponse } from "next/server";
 
 export async function formAction(oData: FormData) {
+        const env = process.env.NODE_ENV;
         const formData = await oData;
         const oName = formData.get('name');
-        // console.log(formData.get('name'));
-        // console.log(formData.get('event'));
-        const token = process.env.API_KEY;
         const host = process.env.DB_HOST_DEV;
+        let token;
+        if(env == "production"){
+                token = process.env.API_KEY_PRODUCTION;
+            }else if(env == "development"){
+                token = process.env.API_KEY;
+            }
         console.log(oName);
         let myHeaders = new Headers();
         myHeaders.append("Authorization", `Bearer ${token}`);
