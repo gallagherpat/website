@@ -1,12 +1,17 @@
 import { NextResponse } from "next/server";
 //@ts-ignore
 export async function PUT(request: Request) {
+    const env = process.env.NODE_ENV;
     const oData = await request.json();
     const event = await oData.data.eventsRSVP;
     // console.log(oData);
     const host = process.env.DB_HOST_DEV;
-    const token = process.env.API_KEY;
-
+    let token;
+    if(env == "production"){
+        token = process.env.API_KEY_PRODUCTION;
+    }else if(env == "development"){
+        token = process.env.API_KEY;
+    }
     let myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${token}`);
     myHeaders.append("Content-Type", "application/json");

@@ -3,13 +3,13 @@ import React from "react"
 import { useState } from "react"
 import EventRSVPButton from "./eventRSVPButton"
 import { render } from "@react-email/components"
-import StripeWelcomeEmail from "../react-email-starter/emails/stripe-welcome"
 import Confirmation from "../react-email-starter/emails/confirmation"
 
 //@ts-ignore
 export default function EventRSVP(props){
     const [eventsRSVP, setEventsRSVP] = useState({});
-
+    const guestEmail = props.email;
+    console.log(guestEmail)
     //@ts-ignore
     const handleChange = (event, isComing) => {
         let updatedValue = {};
@@ -38,7 +38,7 @@ export default function EventRSVP(props){
         const data = await res;
 
         console.log(data);
-
+        return true
     }
 
     async function sendEmail() {
@@ -47,7 +47,7 @@ export default function EventRSVP(props){
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 data: {
-                    email: "gallagherpatrick21@gmail.com",
+                    email: guestEmail,
                     html: render(<Confirmation/>)
                 }
             })
@@ -65,7 +65,7 @@ export default function EventRSVP(props){
             <br />
             <EventRSVPButton event={"ceremony"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange}/>
             <EventRSVPButton event={"ceremony"} setButton={"No thanks!"} state={handleChange}/>
-            <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre> */}
         </div>
         <div>
             Reception
@@ -73,7 +73,7 @@ export default function EventRSVP(props){
             <br />
             <EventRSVPButton event={"reception"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange}/>
             <EventRSVPButton event={"reception"} setButton={"No thanks!"} state={handleChange}/>
-            <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre> */}
         </div>
         <div>
             Cocktail Hour
@@ -81,7 +81,7 @@ export default function EventRSVP(props){
             <br />
             <EventRSVPButton event={"cocktail"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange}/>
             <EventRSVPButton event={"cocktail"} setButton={"No thanks!"} state={handleChange}/>
-            <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre> */}
         </div>
         <button className="w-48 h-12 mt-6 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={updateRSVP}>CLICK</button>
         <br />
