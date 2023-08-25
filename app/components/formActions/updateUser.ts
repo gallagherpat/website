@@ -1,7 +1,6 @@
 "use server"
 
 import { revalidatePath } from "next/cache";
-import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
 export default async function UpdateUser(oData: FormData) {
