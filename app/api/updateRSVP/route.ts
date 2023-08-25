@@ -4,7 +4,6 @@ export async function PUT(request: Request) {
     const env = process.env.NODE_ENV;
     const oData = await request.json();
     const event = await oData.data.eventsRSVP;
-    // console.log(oData);
     const host = process.env.DB_HOST_DEV;
     let token;
     if(env == "production"){
@@ -27,7 +26,7 @@ export async function PUT(request: Request) {
     });
     const res = await req.json();
     const data = await res;
-    console.log(data);
+    // console.log(data);
 
     // const req = await fetch('https://dummyjson.com/products/1')
     // const res = await req.json();

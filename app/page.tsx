@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import CountDownTimer from './components/countDownComponent';
 import Section from './components/section';
+import { useRouter, redirect } from 'next/navigation';
 
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
@@ -19,7 +20,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen mb-96 pb-12 flex-col items-center justify-between">
       <div className="flex min-h-screen mb-96 flex-col items-center justify-between">
-      <div className='relative w-full h-[480px] md:h-[560px] -z-30'>
+      <div className='relative w-full h-[480px] md:h-[560px]'>
       <span className='absolute text-white pt-8 ml-4 text-3xl z-10'>
         Meet the Bride 
       <br/> 
@@ -35,7 +36,7 @@ export default function Home() {
         style={{width: '100%', height: '100%'}}
       />
       <div className='mx-auto text-center pt-6'>
-        {/* <button onClick={users} className='w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white'>CLICK ME</button> */}
+        {/* <button className='w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white'>CLICK ME</button> */}
         <section className='mt-4'>
           <h1 className='text-3xl pb-3'>M'Kenna Daily</h1>
           <h1 className='text-lg pb-3'>- & -</h1>
@@ -43,8 +44,11 @@ export default function Home() {
         </section>
         <h2 className='mt-4 text-lg'>Septepber 29th, 2024</h2>
         <CountDownTimer targetDate={weddingDate}/>
+          <div className="h-12 mt-12">
+            <a className="px-20 py-4 my h-12 mt-10 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" href="/rsvp">RSVP</a>
+          </div>
+
         <Section title="met"/>
-        {/* <div className='bg-slate-300 h-[1px] mt-6'/> */}
         <br />
         <Section title="proposal"/>
       </div>

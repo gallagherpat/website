@@ -8,7 +8,7 @@ export default function NavBar() {
     const [nav, setNav] = useState(false);
 
     return (
-        <main className="sticky top-0">
+        <main className="sticky top-0 z-50">
         <nav className="w-full mx-auto z-60 sm:bg-white sm:bg-opacity-60 sm:backdrop-blur-lg sm:pb-4">
             <header className="flex w-full bg-white px-4 sm:hidden">
               <h1 className="grow tracking-wider text-2xl pt-6 pb-4   drop-shadow-md">M'KENNA & PATRICK</h1>

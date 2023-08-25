@@ -2,14 +2,16 @@
 import React from "react"
 import { useState } from "react"
 import EventRSVPButton from "./eventRSVPButton"
-import { render } from "@react-email/components"
-import Confirmation from "../react-email-starter/emails/confirmation"
+// import { render } from "@react-email/components"
+// import Confirmation from "../react-email-starter/emails/confirmation"
+import RSVPConfirmationButton from "./rsvpConfirmation"
 
 //@ts-ignore
 export default function EventRSVP(props){
+    console.log("WORK DAMMITs")
+    console.log("Guest email " + props.email)
     const [eventsRSVP, setEventsRSVP] = useState({});
-    const guestEmail = props.email;
-    console.log(guestEmail)
+    // console.log(guestEmail)
     //@ts-ignore
     const handleChange = (event, isComing) => {
         let updatedValue = {};
@@ -19,73 +21,84 @@ export default function EventRSVP(props){
             ...eventsRSVP,
             ...updatedValue
         }));
-        console.log(eventsRSVP);
+        // console.log(eventsRSVP);
     }
 
-    async function updateRSVP() {
-        console.log(JSON.stringify(eventsRSVP))
-        console.log("Event ID" + JSON.stringify(props.eventID));
-        const req = await fetch('/api/updateRSVP', {
-            method: "PUT",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                data: {
-                id: props.eventID,
-                eventsRSVP
-            }}),
-        });
-        const res = await req.json();
-        const data = await res;
+    // async function updateRSVP() {
+    //     console.log(JSON.stringify(eventsRSVP))
+    //     console.log("Event ID" + JSON.stringify(props.eventID));
+    //     const req = await fetch('/api/updateRSVP', {
+    //         method: "PUT",
+    //         headers: {"Content-Type": "application/json"},
+    //         body: JSON.stringify({
+    //             data: {
+    //             id: props.eventID,
+    //             eventsRSVP
+    //         }}),
+    //     });
+    //     const res = await req.json();
+    //     const data = await res;
 
-        console.log(data);
-        return true
-    }
+    //     console.log(data);
+    //     return true
+    // }
 
-    async function sendEmail() {
-        const req = await fetch(`/api/send-email`, {
-            method: 'POST',
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                data: {
-                    email: guestEmail,
-                    html: render(<Confirmation/>)
-                }
-            })
-        })
-        const res = await req.json()
-        const data = await res
-        console.log(data);
-    }
+    // async function rsvpHandler() {
+    //     if(await updateRSVP()){
+    //         sendEmail()        
+    //     }
+    // }
+    
+    // async function sendEmail() {
+    //     const req = await fetch(`/api/send-email`, {
+    //         method: 'POST',
+    //         headers: {"Content-Type": "application/json"},
+    //         body: JSON.stringify({
+    //             data: {
+    //                 email: "guestEmail",
+    //                 html: render(<Confirmation/>)
+    //             }
+    //         })
+    //     })
+    //     const res = await req.json()
+    //     const data = await res
+    //     console.log(data);
+    // }
 
     return (
-    <main>
-        <div>
+    <main className="text-center">
+        <div className="mt-8 pb-4 border-b-2 border-black border-opacity-30">
             Ceremony
             <div>3:00pm</div>
             <br />
-            <EventRSVPButton event={"ceremony"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange}/>
-            <EventRSVPButton event={"ceremony"} setButton={"No thanks!"} state={handleChange}/>
+            <EventRSVPButton event={"ceremony"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange} currentState={eventsRSVP}/>
+            <EventRSVPButton event={"ceremony"} setButton={"No thanks!"} state={handleChange} currentState={eventsRSVP}/>
             {/* <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre> */}
         </div>
-        <div>
+        <div className="mt-8 pb-4 border-b-2 border-black border-opacity-30">
             Reception
             <div>3:00pm</div>
             <br />
-            <EventRSVPButton event={"reception"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange}/>
-            <EventRSVPButton event={"reception"} setButton={"No thanks!"} state={handleChange}/>
+            <EventRSVPButton event={"reception"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange} currentState={eventsRSVP}/>
+            <EventRSVPButton event={"reception"} setButton={"No thanks!"} state={handleChange} currentState={eventsRSVP}/>
             {/* <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre> */}
         </div>
-        <div>
+        <div className="mt-8 pb-4 border-b-2 border-black border-opacity-30">
             Cocktail Hour
             <div>3:00pm</div>
             <br />
-            <EventRSVPButton event={"cocktail"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange}/>
-            <EventRSVPButton event={"cocktail"} setButton={"No thanks!"} state={handleChange}/>
+                <EventRSVPButton event={"cocktail"} setButton={props.hasPlusOne ? "We're Going!": "I'm Going!"} state={handleChange} currentState={eventsRSVP}/>
+                <EventRSVPButton event={"cocktail"} setButton={"No thanks!"} state={handleChange} currentState={eventsRSVP}/>
             {/* <pre>{JSON.stringify(eventsRSVP, null, 2)}</pre> */}
         </div>
-        <button className="w-48 h-12 mt-6 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={updateRSVP}>CLICK</button>
-        <br />
-        <button className="w-48 h-12 mt-6 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={sendEmail}>Send email</button>
+        <div>
+            {/* <button style={{cursor: Object.keys(eventsRSVP).length  < 3  && !props.email ? "not-allowed" : ""}} className="w-48 h-12 mt-10 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={rsvpHandler}>Confirm RSVP</button> */}
+            <br />
+            <RSVPConfirmationButton eventsRSVP={eventsRSVP} email={props.email}/>
+
+            {/* <button className="w-48 h-12 mt-6 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={sendEmail}>Send email</button> */}
+        </div>
+        {/* <RSVPConfirmationButton eventsRSVP={eventsRSVP} rsvpHandler={rsvpHandler}/> */}
     </main>
     )
 }
