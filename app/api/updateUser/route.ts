@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export default async function PUT(request: Request) {
+export default async function POST(request: Request) {
     const env = process.env.NODE_ENV;
     const oData = await request.json();
     const host = process.env.DB_HOST_DEV;
