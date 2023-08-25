@@ -50,14 +50,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {/* <div className="block sm:hidden">
                 <SubHeader/>
             </div> */}
-        <h1 className="mb-6">Hello: {data.guestName}</h1>
         
         <div className="max-h-fit bg-slate-300 rounded-xl drop-shadow-md text-center">
             <div className="flex flex-col m-6 pt-6 py-4">
             <p className="mx-12">Before you go clicking buttons, can you verify this info for me?</p>
             <form className="grid gap-1 mt-2 mx-4 text-left" action={UpdateUser}>
                     <label style={{display: data.hasPlusOne ? "block": "none"}} htmlFor="plusOne">Your Plus One:</label>
-                    <input className="h-8" type="text" name="name" defaultValue={data.hasPlusOne ?  data.plusOneName : undefined}/>
+                    <input style={{display: data.hasPlusOne ? "block": "none"}}  className="h-8" type="text" name="name" defaultValue={data.hasPlusOne ?  data.plusOneName : undefined}/>
                     <label htmlFor="email">Email:</label>
                     <input className="h-8"  type="email" name="email" defaultValue={email ? email: ''}/>
                     <input className="hidden" type="text" name="userID" defaultValue={cookie[0].id}/>
