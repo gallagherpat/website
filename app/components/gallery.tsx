@@ -37,7 +37,7 @@ const setImage = props.image;
                 <li key={image.id}>{image.id}</li>
             ))} */}
             {images.map((image, index) => (
-                    <ImageTile setCounter={setCounter} counter={counter} id={index} setModal={setModal} setImage={setImage} url={image.attributes.image.data.attributes.url} width={image.attributes.image.data.attributes.width} height={image.attributes.image.data.attributes.height}/>
+                    <ImageTile key={index} setCounter={setCounter} counter={counter} id={index} setModal={setModal} setImage={setImage} url={image.attributes.image.data.attributes.url} width={image.attributes.image.data.attributes.width} height={image.attributes.image.data.attributes.height}/>
             ))}
 
 
