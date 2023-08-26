@@ -1,4 +1,4 @@
-import {formAction} from "./formAction.ts";
+import {getUsers} from "./formActions/getUsers.ts";
 
 type Props = {
     state: Function
@@ -16,7 +16,7 @@ export default function RSVP(props: Props){
             </button>
             <div className="my-6">
                 <div className="pb-2 text-lg">{currentCard}</div>
-            <form className="mx-6" action={formAction}>
+            <form className="mx-6" action={getUsers}>
                     <p>Please enter the first and last name of one member of your party below. If you're responding for you and a guest (or your family), you'll be able to RSVP for your entire group on the next page.</p>
                     <input className="h-8 w-5/6 my-4" type="text" name="name" />
                     <input readOnly type="text" className="hidden"  name="event" value={currentCard}/>

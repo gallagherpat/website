@@ -1,10 +1,12 @@
+//@ts-nocheck
 "use client"
+
 import ScheduleCard from "../components/scheduleCard"
 import RSVP from "../components/rsvp"
 import React from "react";
 import { useState } from "react";
 import SubHeader from "../components/subHeader";
-
+import { getUsers } from "../components/formActions/getUsers";
 const object = {
     "data": [
         {
@@ -37,6 +39,7 @@ const object = {
 export default function Page() {
     const [modal, setModal] = useState(true);
     const [currentCard, setCurrentCard] = useState('');
+
 
     return(
         <main className="w-3/4 mx-auto mt-6 sm:mt-12 max-w-md">

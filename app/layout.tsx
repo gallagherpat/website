@@ -33,7 +33,7 @@ export default function RootLayout({
       <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
     </head>
       <body className={lato.className + " min-h-screen scroll-smooth"}>
-      <h1 className="w-full tracking-wider text-2xl bg-white sm:bg-opacity-60 mx-auto text-center pt-6 pb-4 hidden sm:block sm:pb-0 drop-shadow-md">M'KENNA & PATRICK</h1>
+      <h1 className="z-30 w-full tracking-wider text-2xl bg-white sm:bg-opacity-60 mx-auto text-center pt-6 pb-4 hidden sm:block sm:pb-0 drop-shadow-md">M'KENNA & PATRICK</h1>
       <NavBar/>
         {children}
         </body>
