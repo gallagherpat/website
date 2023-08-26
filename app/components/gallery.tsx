@@ -1,18 +1,47 @@
+//@ts-nocheck
 "use client"
-import Image from "next/image"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ImageTile from "./imageTile";
 type Props = {
     state: Function,
-    image: Function
+    image: Function,
+    pos: number
 }
 export default function Gallery(props: Props){
-    // console.log(props);
+    const [images, setImages] = useState([]);
+    const host = process.env.DB_HOST_DEV;
+    const [counter, setCounter] = useState(0);
+    const pos = props.pos
+
+    useEffect(() => {
+        async function getImages() {
+            let reqHeaders = new Headers();
+            reqHeaders.append("Content-Type", "application/json")
+            const req = await fetch('/api/getImages', {
+                method: "POST",
+                body: JSON.stringify({position: pos})
+            })
+            const res = await req.json();
+            const data = await res;
+            setImages(data.data)
+        }
+        getImages()
+    }, []);
+    // console.log(images[1].attributes.image)
+    console.log("ITEMS");
 const setModal = props.state;
 const setImage = props.image;
-
     return (
-        <main className="grid grid-cols-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
-            <button onClick={() => {setModal(true); setImage(2)}} className="row-span-2">
+        <main className="grid grid-cols-3 grid-rows-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
+            {/* {images.map((image) => (
+                <li key={image.id}>{image.id}</li>
+            ))} */}
+            {images.map((image, index) => (
+                    <ImageTile setCounter={setCounter} counter={counter} id={index} setModal={setModal} setImage={setImage} url={image.attributes.image.data.attributes.url} width={image.attributes.image.data.attributes.width} height={image.attributes.image.data.attributes.height}/>
+            ))}
+
+
+            {/* <button onClick={() => {setModal(true); setImage(2)}} className="row-span-2">
                 <Image
                 className="transition duration-150 ease-in-out rounded-lg object-cover h-full hover:scale-125 origin-top-left hover:z-10"
                 src="/pictures/image (2).jpg"
@@ -83,7 +112,7 @@ const setImage = props.image;
                 width={300}
                 height={300}
                 />
-            </button>
+            </button> */}
             
         </main>
     )
