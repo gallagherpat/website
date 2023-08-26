@@ -27,6 +27,7 @@ export default function Home() {
         and the Goof..
       </span>
       <Image
+        priority
         className='object-cover brightness-[60%]'
         src="/backdrop.JPG"
         alt="Picture of the Bride and Groom"
