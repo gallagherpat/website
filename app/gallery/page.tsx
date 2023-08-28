@@ -7,7 +7,12 @@ import SubHeader from "../components/subHeader";
 
 export default function Page() {
     const [modal, setModal] = useState(false);
-    const [image, setImage] = useState(0);
+    const [image, setImage] = useState('');
+    const containerArrays = [
+        { id: 0,},
+        { id: 9,}
+    ];
+
 
     return(
         <main>
@@ -19,11 +24,10 @@ export default function Page() {
             </div>
             <div className="lg:w-1/2 mx-auto px-4 mt-12">
 
-                <Gallery state={setModal} image={setImage}/>
-                <Gallery state={setModal} image={setImage}/>
-                <Gallery state={setModal} image={setImage}/>
+            {containerArrays.map((containerArray) => (
+                    <Gallery key={containerArray.id} pos={containerArray.id} state={setModal} image={setImage}/>
+            ))}
 
- 
             </div>
 
         </main> 

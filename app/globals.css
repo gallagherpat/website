@@ -42,7 +42,8 @@ body {
 }
 
 .addeventatc .addeventatc_icon {
-  background:url(https://cdn.addevent.com/libs/imgs/icon-calendar-fff-t1.svg) no-repeat!important;background-size:24px 24px!important;
+  background:url(https://cdn.addevent.com/libs/imgs/icon-calendar-fff-t1.svg) no-repeat!important;
+  background-size:24px 24px!important;
 }
 
 .material-symbols-outlined {
@@ -51,4 +52,9 @@ body {
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+#backdrop{
+  background-image: url('/notion-logo.png') no-repeat!important;
+  background-size: cover;
 }

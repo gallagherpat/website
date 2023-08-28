@@ -1,14 +1,22 @@
+//@ts-nocheck
 import Image from "next/image"
 type Props = {
-    image: number
+    image: string
 }
 
 export default function FullImage(props: Props){
+    const env = process.env.NODE_ENV;
+
     // console.log(props);
     const image = props.image;
-    const src = "/pictures/image (" + image + ").jpg"
+    let src;
+    if(env == "production"){
+        src = `https://plankton-app-muzg8.ondigitalocean.app${image}`
+    }else if(env == "development"){
+        src = `http://127.0.0.1:1337${image}`
+    }
     return(
-        <main className="max-w-[800px] max-h-[600px] object-cover">
+        <main className="max-w-[800px] max-h-[600px] mb-24 object-cover">
                 <Image
                 src={src}
                 alt="image"
