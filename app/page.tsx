@@ -3,6 +3,7 @@ import Image from 'next/image';
 import CountDownTimer from './components/countDownComponent';
 import Section from './components/section';
 import { useRouter, redirect } from 'next/navigation';
+import bg from "../public/backdrop.jpg"
 
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
@@ -18,14 +19,20 @@ export default function Home() {
   // }
 
   return (
-    <main className="flex min-h-screen mb-96 pb-12 flex-col items-center justify-between">
-      <div className="flex min-h-screen mb-96 flex-col items-center justify-between">
-      <div className='relative w-full h-[480px] md:h-[560px]'>
+    <main className="flex min-h-screen pb-12 flex-col items-center justify-between">
+      <div className='relative object-cover px-auto w-full h-[480px] md:h-[560px]'>
       <span className='absolute text-white pt-8 ml-4 text-3xl z-10'>
         Meet the Bride 
       <br/> 
         and the Goof..
       </span>
+
+      {/* <div className='bg-fixed p-64 bg-no-repeat brightness-[60%]' style={{
+          backgroundImage: `url(${bg.src})`,
+          height: '100%',
+          width: '1900px'
+        }}/> */}
+
       <Image
         priority
         className='object-cover brightness-[60%]'
@@ -36,7 +43,9 @@ export default function Home() {
         sizes='100vw'
         style={{width: '100%', height: '100%'}}
       />
-      <div className='mx-auto text-center pt-6'>
+      </div>
+
+    <div className='mx-auto text-center pt-6'>
         {/* <button className='w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white'>CLICK ME</button> */}
         <section className='mt-4'>
           <h1 className='text-3xl pb-3'>M'Kenna Daily</h1>
@@ -52,9 +61,8 @@ export default function Home() {
         <Section title="met"/>
         <br />
         <Section title="proposal"/>
+
       </div>
-    </div>
-    </div>
 
     </main>
   )
