@@ -6,7 +6,7 @@ const object = {
         {
             "event": "Ceremony",
             "date": "Sunday, September 29th, 2024",
-            "time": "3:00pm",
+            "time": "3:30pm",
             "name": "The House on Barber Mill",
             "location": "2239 Barber Mill Rd, Clayton, NC 27520",
             "description": "This will be held on the outside of the house"
@@ -14,7 +14,7 @@ const object = {
         {
             "event": "Reception",
             "date": "Sunday, September 29th, 2024",
-            "time": "4:30pm",
+            "time": "5:00pm",
             "name": "The House on Barber Mill",
             "location": "2239 Barber Mill Rd, Clayton, NC 27520",
             "description": "A delicous whole roasted pig"
@@ -22,7 +22,7 @@ const object = {
         {
             "event": "Cocktail Hour",
             "date": "Sunday, September 29th, 2024",
-            "time": "5:30pm",
+            "time": "4:30pm",
             "name": "The House on Barber Mill",
             "location": "2239 Barber Mill Rd, Clayton, NC 27520",
             "description": "Drinks and good times sure to come"
@@ -37,8 +37,8 @@ export default function Page() {
                 <SubHeader/>
             </div>
             <ScheduleCard data={object.data[0]}/>
-            <ScheduleCard data={object.data[1]}/>
-            <ScheduleCard data={object.data[2]} lastCard={true}/>
+            <ScheduleCard data={object.data[2]}/>
+            <ScheduleCard data={object.data[1]} lastCard={true}/>
         </main>
     )
 }
