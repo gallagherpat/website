@@ -35,6 +35,7 @@ export default function RootLayout({
       <h1 className="z-30 w-full tracking-wider text-2xl bg-white sm:bg-opacity-60 mx-auto text-center pt-6 pb-4 hidden sm:block sm:pb-0 drop-shadow-md">M'KENNA & PATRICK</h1>
       <NavBar/>
         {children}
+        <footer className='my-8 w-1/2 text-center mx-auto'>-Made by ya boy-</footer>
         </body>
     </html>
   )

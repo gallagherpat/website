@@ -42,8 +42,7 @@ body {
 }
 
 .addeventatc .addeventatc_icon {
-  background:url(https://cdn.addevent.com/libs/imgs/icon-calendar-fff-t1.svg) no-repeat!important;
-  background-size:24px 24px!important;
+  background:url(https://cdn.addevent.com/libs/imgs/icon-calendar-fff-t1.svg) no-repeat!important;background-size:24px 24px!important;
 }
 
 .material-symbols-outlined {
