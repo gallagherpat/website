@@ -1,5 +1,6 @@
 "use client"
 import { usePathname } from "next/navigation";
+import Link from 'next/link'
 
 //@ts-ignore
 export default function ScheduleCard(props){
@@ -54,12 +55,15 @@ export default function ScheduleCard(props){
                 <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu">{data.location}</a>
                 <p className="my-4">{data.description}</p>
                 <div className="text-white">
-                    <a href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">Map</button></a>
+                    <Link target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">Map</button></Link>
 
+                    <Link target="_blank" rel="noreferrer" href="https://www.addevent.com/event/Na18390368"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">Add to Calendar</button></Link>
+{/* 
                     <div title="Add to Calendar" className="addeventatc" data-styling="none" data-id="Na18390368">	
                         <span className="text-white font-thin">Add to Calendar</span>
                         <span className="addeventatc_icon"/>
-                    </div>
+                    </div> */}
+                    
                 </div>
             </main>
         )
