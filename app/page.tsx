@@ -29,7 +29,7 @@ export default function Home() {
       <Image
         priority
         className='object-cover brightness-[70%]'
-        src="/images/hero.JPG"
+        src="/images/hero.jpg"
         alt="Picture of the Bride and Groom"
         width={0}
         height={0}
