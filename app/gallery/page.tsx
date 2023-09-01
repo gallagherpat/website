@@ -10,7 +10,11 @@ export default function Page() {
     const [image, setImage] = useState('');
     const containerArrays = [
         { id: 0,},
-        { id: 9,}
+        { id: 9,},
+        {id: 18},
+        {id: 27},
+        {id: 36},
+        {id: 45}
     ];
 
 
