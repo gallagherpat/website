@@ -18,7 +18,7 @@ export default function ImageTile(props) {
         className = "row-span-1"
     }
 
-    if(position > 9){
+    if(position > 8){
         return
     }
 
