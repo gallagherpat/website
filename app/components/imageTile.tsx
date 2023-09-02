@@ -33,6 +33,7 @@ export default function ImageTile(props) {
                     alt="Image 1"
                     width={300}
                     height={300}
+                    unoptimized
                     />
                 </button>
             )
