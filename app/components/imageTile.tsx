@@ -1,4 +1,5 @@
 //@ts-nocheck
+import React from "react";
 import Image from "next/image";
 
 export default function ImageTile(props) {
@@ -17,36 +18,36 @@ export default function ImageTile(props) {
         className = "row-span-1"
     }
 
-    if(position > 9){
+    if(position > 8){
         return
     }
-    if(env == "production"){
-        return(
-            <button onClick={() => {setModal(true); setImage(props.url)}} className={className}>
-                <Image
-                className={image}
-                src={`https://plankton-app-muzg8.ondigitalocean.app${props.url}`}
-                alt="Image 1"
-                width={300}
-                height={300}
-                unoptimized
-                />
-            </button>
-        )
-    }else if(env == "development"){
-        return(
-            <button onClick={() => {setModal(true); setImage(props.url)}} className={className}>
-                <Image
-                className={image}
-                src={`http://127.0.0.1:1337${props.url}`}
-                alt="Image 1"
-                width={300}
-                height={300}
-                />
-            </button>
-        )
-    }
 
 
-
+    console.log(props.url)
+        if(env == "production"){
+            return(
+                <button onClick={() => {setModal(true); setImage(props.url)}} className={className}>
+                    <Image
+                    className={image}
+                    src={`https://plankton-app-muzg8.ondigitalocean.app${props.url}`}
+                    alt="Image 1"
+                    width={300}
+                    height={300}
+                    unoptimized
+                    />
+                </button>
+            )
+        }else if(env == "development"){
+            return(
+                <button onClick={() => {setModal(true); setImage(props.url)}} className={className}>
+                    <Image
+                    className={image}
+                    src={`http://127.0.0.1:1337${props.url}`}
+                    alt="Image 1"
+                    width={300}
+                    height={300}
+                    />
+                </button>
+            )
+        }
 }
