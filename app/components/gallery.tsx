@@ -40,7 +40,6 @@ export default function Gallery(props: Props) {
           body: JSON.stringify({ position: pos }),
         });
         const res = await req.json();
-        console.log("API RESPONSE "+ JSON.stringify(res))
         setImages(res.data);
         setLoad(false);
       } catch (error) {
