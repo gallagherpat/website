@@ -15,7 +15,7 @@ export async function POST(request: Request){
     }
     let myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${token}`);
-    const getReq = await fetch(`${host}/api/o-images?populate=*&pagination[start]=${pos.position}&pagination[limit]=8`,{               
+    const getReq = await fetch(`${host}/api/o-images?populate=*&pagination[start]=${pos.position}&pagination[limit]=9`,{               
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow',
