@@ -7,7 +7,6 @@ import ImageTile from './imageTile'; // Make sure to use the correct import path
 type Props = {
   state: Function;
   image: Function;
-  pos: number;
 };
 
 type ImageAttributes = {
