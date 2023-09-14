@@ -40,6 +40,7 @@ export default function Gallery(props: Props) {
           body: JSON.stringify({ position: pos }),
         });
         const res = await req.json();
+        console.log(res.data);
         setImages(res.data);
         setLoad(false);
       } catch (error) {
@@ -48,6 +49,7 @@ export default function Gallery(props: Props) {
     }
     getImages();
   }, []);
+  
 
   if (!load) {
     return (
