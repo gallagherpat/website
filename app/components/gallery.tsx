@@ -49,11 +49,12 @@ export default function Gallery(props: Props) {
     }
     getImages();
   }, []);
-  
+
 
   if (!load) {
     return (
-      <main className="grid grid-cols-3 grid-rows-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
+      <main className="inline-grid grid-cols-3 grid-rows-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
+        <>
         {images.map((image, index) => (
           <ImageTile
             key={index}
@@ -67,6 +68,7 @@ export default function Gallery(props: Props) {
             height={image?.attributes?.image?.data?.attributes?.height}
           />
         ))}
+        </>
       </main>
     );
   }

@@ -13,7 +13,7 @@ export default function ImageTile(props) {
     let image = "transition duration-150 ease-in-out rounded-lg object-cover h-full hover:scale-125 hover:z-10 origin-center";
 
     if(aspectRatio < 1){
-        className = "row-span-2"
+        className = "row-span-1"
     }else if(aspectRatio > 1){
         className = "row-span-1"
     }
@@ -32,7 +32,6 @@ export default function ImageTile(props) {
                     alt="Image 1"
                     width={300}
                     height={300}
-                    unoptimized
                     />
                 </button>
             )
