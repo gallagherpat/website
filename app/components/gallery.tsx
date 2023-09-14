@@ -27,7 +27,6 @@ export default function Gallery(props: Props) {
   const [images, setImages] = useState<ImageAttributes[]>([]);
   const [counter, setCounter] = useState(0);
   const [load, setLoad] = useState(true);
-  const pos = props.pos;
 
   useEffect(() => {
     async function getImages() {
