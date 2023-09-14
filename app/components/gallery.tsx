@@ -43,18 +43,20 @@ export default function Gallery(props: Props) {
         console.log(res.data);
         setImages(res.data);
         setLoad(false);
+        console.log(images)
       } catch (error) {
         console.error('Error fetching images:', error);
       }
     }
     getImages();
   }, []);
-
+  console.log(images);
 
   if (!load) {
     return (
       <main className="inline-grid grid-cols-3 grid-rows-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
         <>
+        {/* {images.map((image) => (<div>{image.attributes.image.data.attributes.url}</div>))} */}
         {images.map((image, index) => (
           <ImageTile
             key={index}

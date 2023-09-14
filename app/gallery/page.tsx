@@ -38,10 +38,10 @@ export default function Page() {
                 <FullImage image={image}/>
             </div>
             <div className="lg:w-1/2 mx-auto px-4 mt-12">
-
-            {containerArrays.map((containerArray) => (
+            <Gallery state={setModal} image={setImage}/>
+            {/* {containerArrays.map((containerArray) => (
                     <Gallery key={containerArray.id} pos={containerArray.id} state={setModal} image={setImage}/>
-            ))}
+            ))} */}
 
             </div>
 

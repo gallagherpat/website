@@ -17,10 +17,10 @@ export default function ImageTile(props) {
     }else if(aspectRatio > 1){
         className = "h-auto max-w-full row-span-1"
     }
-
-    if(position > 8){
-        return
-    }
+    console.log(props.url)
+    // if(position > 8){
+    //     return
+    // }
 
 
         if(env == "production"){
