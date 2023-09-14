@@ -15,13 +15,14 @@ export async function POST(request: Request){
     }
     let myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${token}`);
-    const getReq = await fetch(`${host}/api/o-images?populate=*&pagination[start]=${pos.position}&pagination[limit]=9`,{               
+    const getReq = await fetch(`${host}/api/o-images?populate=*`,{               
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow',
     })
     const getRes = await getReq.json();
     const data = getRes;
+    console.log(data);
     return NextResponse.json(data)
 }
 
