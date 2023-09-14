@@ -35,7 +35,7 @@ export default function Gallery(props: Props) {
         reqHeaders.append('Content-Type', 'application/json');
         const req = await fetch('/api/getImages', {
           method: 'POST',
-          body: JSON.stringify({ position: pos }),
+          body: JSON.stringify({ position: "hello" }),
         });
         const res = await req.json();
         console.log(res.data);
