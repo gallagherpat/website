@@ -6,8 +6,6 @@ type Props = {
 
 export default function FullImage(props: Props){
     const env = process.env.NODE_ENV;
-
-    // console.log(props);
     const image = props.image;
     let src;
     if(env == "production"){
@@ -16,12 +14,12 @@ export default function FullImage(props: Props){
         src = `http://127.0.0.1:1337${image}`
     }
     return(
-        <main className="max-w-[800px] max-h-[600px] mb-24 object-cover">
+        <main className="max-w-[800px] max-h-[600px] mb-24 md:mb-64 object-cover">
                 <Image
                 src={src}
                 alt="image"
-                width={700}
-                height={700}
+                width={600}
+                height={600}
                 unoptimized
                 />
         </main>

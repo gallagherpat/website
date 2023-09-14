@@ -2,7 +2,7 @@
 "use client"
 import React from 'react';
 import  { useEffect, useState } from 'react';
-import ImageTile from './imageTile'; // Make sure to use the correct import path
+import ImageTile from './imageTile'; 
 
 type Props = {
   state: Function;
@@ -38,23 +38,19 @@ export default function Gallery(props: Props) {
           body: JSON.stringify({ position: "hello" }),
         });
         const res = await req.json();
-        console.log(res.data);
         setImages(res.data);
         setLoad(false);
-        console.log(images)
       } catch (error) {
         console.error('Error fetching images:', error);
       }
     }
     getImages();
   }, []);
-  console.log(images);
 
   if (!load) {
     return (
       <main className="inline-grid grid-cols-3 grid-rows-3 gap-1 sm:gap-3 mt-8 sm:mt-20">
         <>
-        {/* {images.map((image) => (<div>{image.attributes.image.data.attributes.url}</div>))} */}
         {images.map((image, index) => (
           <ImageTile
             key={index}
