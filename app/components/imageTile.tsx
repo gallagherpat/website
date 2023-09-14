@@ -23,7 +23,6 @@ export default function ImageTile(props) {
     }
 
 
-    console.log(props.url)
         if(env == "production"){
             return(
                 <button onClick={() => {setModal(true); setImage(props.url)}} className={className}>
