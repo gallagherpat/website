@@ -13,9 +13,9 @@ export default function ImageTile(props) {
     let image = "transition duration-150 ease-in-out rounded-lg object-cover h-full hover:scale-125 hover:z-10 origin-center";
 
     if(aspectRatio < 1){
-        className = "row-span-1"
+        className = "h-auto max-w-full"
     }else if(aspectRatio > 1){
-        className = "row-span-1"
+        className = "h-auto max-w-full"
     }
 
     if(position > 8){
