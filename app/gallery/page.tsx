@@ -44,7 +44,7 @@ export default function Page() {
                 <SubHeader/>
             </div>
             <section className="w-11/12 md:w-10/12 lg:w-1/2 px-4 mx-auto mt-8">
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {images.map((image, index) => (
                         <NewImageTile modalHandler={modalHandler} setCounter={setCounter} key={index} index={index} image={image} src={src}/>
                     ))}
