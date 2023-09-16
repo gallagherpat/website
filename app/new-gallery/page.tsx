@@ -2,7 +2,6 @@
 import {useEffect, useState} from 'react'
 import NewImageTile from '../components/newImageTile'
 import NewFullImage from '../components/newFullImage'
-import Image from 'next/image'
 
 export default function Page() {
     const env = process.env.NODE_ENV;

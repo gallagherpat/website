@@ -1,4 +1,5 @@
 import Image from 'next/image'
+//@ts-ignore
 export default function NewImageTile(props) {
     let image = props.image;
     const imageUrl = image.attributes.image.data.attributes.url

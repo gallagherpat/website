@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image';
+
 //@ts-ignore
 export default function NewFullImage(props) {
     const images = props.images;
