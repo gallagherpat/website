@@ -2,6 +2,7 @@
 import {useEffect, useState} from 'react'
 import NewImageTile from '../components/newImageTile'
 import NewFullImage from '../components/newFullImage'
+import SubHeader from '../components/subHeader'
 
 export default function Page() {
     const env = process.env.NODE_ENV;
@@ -39,7 +40,10 @@ export default function Page() {
     if(!load){
         return (<>
         <NewFullImage isModalOpen={isModalOpen} modalHandler={modalHandler} images={images} setCounter={setCounter} counter={counter} src={src}/>
-            <section className="w-11/12 md:w-10/12 lg:w-1/2 mx-auto">
+        <div className="block sm:hidden pt-4">
+                <SubHeader/>
+            </div>
+            <section className="w-11/12 md:w-10/12 lg:w-1/2 px-4 mx-auto mt-8">
                 <div className="grid grid-cols-3 gap-2">
                     {images.map((image, index) => (
                         <NewImageTile modalHandler={modalHandler} setCounter={setCounter} key={index} index={index} image={image} src={src}/>
