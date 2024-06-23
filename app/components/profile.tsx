@@ -12,7 +12,6 @@ export default function Profile(){
             />
             <h3>TBA</h3>
             <br />
-            {/* <p>Negative Patrick is so evil he makes fire feel cold</p> */}
         </main>
     )
 }

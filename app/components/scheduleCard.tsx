@@ -7,34 +7,6 @@ export default function ScheduleCard(props){
     let path = usePathname();
     let border: string;
     const data = props.data;
-    const object = {
-        "data": [
-            {
-                "event": "Ceremony",
-                "date": "Sunday, September 29th, 2024",
-                "time": "3:00pm",
-                "name": "The House on Barber Mill",
-                "location": "2239 Barber Mill Rd, Clayton, NC 27520",
-                "description": "This will be held on the outside of the house"
-            },
-            {
-                "event": "Reception",
-                "date": "Sunday, September 29th, 2024",
-                "time": "4:30pm",
-                "name": "The House on Barber Mill",
-                "location": "2239 Barber Mill Rd, Clayton, NC 27520",
-                "description": "A delicous whole roasted pig"
-            },            
-            {
-                "event": "Cocktail Hour",
-                "date": "Sunday, September 29th, 2024",
-                "time": "5:30pm",
-                "name": "The House on Barber Mill",
-                "location": "2239 Barber Mill Rd, Clayton, NC 27520",
-                "description": "Drinks and good times sure to come"
-            }
-        ]
-    }
     if(props.lastCard){
         border = "text-center mt-8 pb-4"
     }else{
@@ -58,12 +30,6 @@ export default function ScheduleCard(props){
                     <Link target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">Map</button></Link>
 
                     <Link target="_blank" rel="noreferrer" href="https://www.addevent.com/event/Na18390368"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">Add to Calendar</button></Link>
-{/* 
-                    <div title="Add to Calendar" className="addeventatc" data-styling="none" data-id="Na18390368">	
-                        <span className="text-white font-thin">Add to Calendar</span>
-                        <span className="addeventatc_icon"/>
-                    </div> */}
-                    
                 </div>
             </main>
         )

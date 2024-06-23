@@ -38,9 +38,10 @@ export default function Page() {
         getImages()
     },[])
     if(!load){
-        return (<>
+        return (
+        <>
         <NewFullImage isModalOpen={isModalOpen} modalHandler={modalHandler} images={images} setCounter={setCounter} counter={counter} src={src}/>
-        <div className="block sm:hidden pt-4">
+            <div className="block sm:hidden pt-4">
                 <SubHeader/>
             </div>
             <section className="w-11/12 md:w-10/12 lg:w-1/2 px-4 mx-auto mt-8">
