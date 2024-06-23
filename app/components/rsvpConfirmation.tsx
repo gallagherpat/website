@@ -3,7 +3,7 @@ import Confirmation from "../react-email-starter/emails/confirmation"
 import { useRouter } from 'next/navigation'
 
 //@ts-ignore
-export default  function RSVPConfirmationButton(props){
+export default function RSVPConfirmationButton(props){
     const router = useRouter();
     let eventsRSVP = props.eventsRSVP
     let guestEmail = props.email;
@@ -46,7 +46,7 @@ export default  function RSVPConfirmationButton(props){
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 data: {
-                    email: "stgallagherpatrick@gmail.com",
+                    email: "gallagherpatrick21@gmail.com",
                     html: render(<Confirmation/>)
                 }
             })

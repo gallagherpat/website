@@ -7,6 +7,7 @@ export async function getUsers(oData: FormData) {
         const formData = await oData;
         const oName = formData.get('name');
         const host = process.env.DB_HOST_DEV;
+        console.log(host)
         let token;
         if(env == "production"){
                 token = process.env.API_KEY_PRODUCTION;
@@ -27,12 +28,14 @@ export async function getUsers(oData: FormData) {
                 redirect: 'follow',
                 cache: 'no-store'
             });
+        console.log(`${host}/api/event-guests?filters[guestName][$eq]=${oName}&populate[1]=event_rsvp`)
         const res = await req.json();
+
         const data = await res.data;
-            
+
         // console.log(data[0].attributes.event_rsvp);
         console.log("GETUSERS")
-        console.log(data)
+
         if(data === undefined){
                 return
         }

@@ -17,7 +17,7 @@ export async function PUT(request: Request) {
 
     // console.log(JSON.stringify({event: data}))
     const req = await fetch(`${host}/api/event-rsvps/${oData.data.id}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: myHeaders,
         redirect: 'follow',
         body: JSON.stringify({

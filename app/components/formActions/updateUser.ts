@@ -26,7 +26,7 @@ export default async function UpdateUser(oData: FormData) {
         redirect: 'follow',
         body: JSON.stringify({
         data: {
-            guestNma: null,
+            guestName: null,
             plusOneName: formData.get('name')?.toString(),
             guestEmail: formData.get('email')?.toString(),
             hasPluseOne: null

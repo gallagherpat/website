@@ -8,6 +8,7 @@ import RSVPConfirmationButton from "./rsvpConfirmation"
 export default function EventRSVP(props){
     console.log("WORK DAMMITs")
     console.log("Guest email " + props.email)
+    console.log("Guest Name")
     const [eventsRSVP, setEventsRSVP] = useState({});
     //@ts-ignore
     const handleChange = (event, isComing) => {
@@ -18,6 +19,7 @@ export default function EventRSVP(props){
             ...eventsRSVP,
             ...updatedValue
         }));
+        console.log(eventsRSVP)
     }
 
     return (
