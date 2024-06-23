@@ -59,13 +59,14 @@ export default  function RSVPConfirmationButton(props){
         }
     }
 
-    // if(Object.keys(eventsRSVP).length < 3 && guestEmail != null){
-    //     console.log("BUTTON IS CLICKABLE")
-    // }
+    if(Object.keys(eventsRSVP).length > 3 && guestEmail != null){
+        console.log("BUTTON IS CLICKABLE")
+    }
 
     return(
         <main>
-            <button style={{cursor: Object.keys(eventsRSVP).length == 3 != null ? "" : "not-allowed"}} className="w-48 h-12 mt-10 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={rsvpHandler}>Confirm RSVP</button>
+            <button style={{cursor: Object.keys(eventsRSVP).length == 3 != null ? "" : "not-allowed"}} 
+            className="w-48 h-12 mt-10 bg-zinc-700 m-3 rounded hover:bg-zinc-900 text-white" onClick={rsvpHandler}>Confirm RSVP</button>
             <br />
         </main>
     )

@@ -37,13 +37,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
     // const data = cookie[0].attributes;
     const id = cookie[0].attributes.event_rsvp.data.id;
     let email = cookies().get('guestEmail')?.value;
-    console.log("GUEST EMAIL");
-    console.log(cookies().get('guestEmail')?.value)   
+    let hasPlusOne = cookies().get('hasPlusOne')?.value;
+
     if(!cookie){
         redirect("/rsvp");
     }
-
-    
 
     return (
     <main className="w-3/4 mx-auto mt-8 sm:mt-12 max-w-md text-center pb-4">
@@ -55,8 +53,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <div className="flex flex-col m-6 pt-6 py-4">
             <p className="mx-12">Before you go clicking buttons, can you verify this info for me?</p>
             <form className="grid gap-1 mt-2 mx-4 text-left" action={UpdateUser}>
-                    <label style={{display: data.hasPlusOne ? "block": "none"}} htmlFor="plusOne">Your Plus One:</label>
-                    <input style={{display: data.hasPlusOne ? "block": "none"}}  className="h-8" type="text" name="name" defaultValue={data.hasPlusOne ?  data.plusOneName : undefined}/>
+                    <label style={{display: hasPlusOne ? "block": "none"}} htmlFor="plusOne">Your Plus One:</label>
+                    <input style={{display: hasPlusOne ? "block": "none"}}  className="h-8" type="text" name="name" defaultValue={data.hasPlusOne ?  data.plusOneName : undefined}/>
                     <label htmlFor="email">Email:</label>
                     <input className="h-8"  type="email" name="email" defaultValue={email ? email: ''}/>
                     <input className="hidden" type="text" name="userID" defaultValue={cookie[0].id}/>
@@ -64,7 +62,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </form>
             </div>
         </div>
-        <EventRSVP eventID={id} hasPlusOne={data.hasPlusOne} email={email}/>
+        <EventRSVP eventID={id} hasPlusOne={hasPlusOne} email={email} guestName={cookies().get("guestName")?.value} plusOneName={cookies().get("plusOneName")?.value}/>
     </main>
     )
 }

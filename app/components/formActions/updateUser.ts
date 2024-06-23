@@ -26,10 +26,8 @@ export default async function UpdateUser(oData: FormData) {
         redirect: 'follow',
         body: JSON.stringify({
         data: {
-            guestNma: null,
             plusOneName: formData.get('name')?.toString(),
             guestEmail: formData.get('email')?.toString(),
-            hasPluseOne: null
         }
         })
     });
@@ -37,6 +35,7 @@ export default async function UpdateUser(oData: FormData) {
     const data = await res;
 
     cookies().set("guestEmail", data.data.attributes.guestEmail);
+    cookies().set("plusOneName", data.data.attributes.plusOneName);
 
     console.log("UPDATE")
     console.log(data);

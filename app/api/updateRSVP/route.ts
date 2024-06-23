@@ -6,6 +6,7 @@ export async function PUT(request: Request) {
     const event = await oData.data.eventsRSVP;
     const host = process.env.DB_HOST_DEV;
     let token;
+    console.log(host)
     if(env == "production"){
         token = process.env.API_KEY_PRODUCTION;
     }else if(env == "development"){
@@ -16,8 +17,8 @@ export async function PUT(request: Request) {
     myHeaders.append("Content-Type", "application/json");
 
     // console.log(JSON.stringify({event: data}))
-    const req = await fetch(`${host}/api/event-rsvps/${oData.data.id}`, {
-        method: 'PUT',
+    const req = await fetch(`${host}/api/event-rsvps`, {
+        method: 'POST',
         headers: myHeaders,
         redirect: 'follow',
         body: JSON.stringify({
@@ -26,7 +27,7 @@ export async function PUT(request: Request) {
     });
     const res = await req.json();
     const data = await res;
-    // console.log(data);
+    console.log(data);
 
     // const req = await fetch('https://dummyjson.com/products/1')
     // const res = await req.json();

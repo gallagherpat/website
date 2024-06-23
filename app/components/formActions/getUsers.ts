@@ -7,6 +7,7 @@ export async function getUsers(oData: FormData) {
         const formData = await oData;
         const oName = formData.get('name');
         const host = process.env.DB_HOST_DEV;
+        console.log(host);
         let token;
         if(env == "production"){
                 token = process.env.API_KEY_PRODUCTION;
@@ -45,6 +46,12 @@ export async function getUsers(oData: FormData) {
                 value: JSON.stringify(data),
                 path: `/`
         })
-        cookies().set("guestEmail", data[0].attributes.guestEmail)
+        if(oName === null){
+                return
+        }
+        //@ts-ignore
+        cookies().set("guestName", oName);
+        cookies().set("guestEmail", data[0].attributes.guestEmail);
+        cookies().set("hasPlusOne", data[0].attributes.hasPlusOne);
         await redirect(`/rsvp/guest/${data[0].attributes.guestName}`);
 }

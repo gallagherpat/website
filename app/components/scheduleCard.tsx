@@ -79,7 +79,7 @@ export default function ScheduleCard(props){
                 <a className="hover:underline" target="_blank" href="https://www.google.com/maps/place/The+House+on+Barber+Mill/@35.5939602,-78.4881662,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac65385f31882b:0xdf8edf96b2848b61!8m2!3d35.5939559!4d-78.4855913!16s%2Fg%2F11p65dqswt?entry=ttu">{data.location}</a>
                 <p className="my-4">{data.description}</p>
                 <div className="text-white">
-                    <button disabled={true} onClick={() => {setModal(false); setCurrentCard(data.event)}} className="w-48 h-12 bg-zinc-400 m-3 rounded">RSVP</button>
+                    <button disabled={false} onClick={() => {setModal(false); setCurrentCard(data.event)}} className="w-48 h-12 bg-zinc-800 m-3 rounded hover:bg-zinc-400">RSVP</button>
                 </div>            
             </main>
         )
