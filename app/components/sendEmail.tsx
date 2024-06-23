@@ -4,14 +4,10 @@ import { render } from '@react-email/render';
 import StripeWelcomeEmail from '../react-email-starter/emails/stripe-welcome';
 //@ts-ignore
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-const TO_EMAIL = process.env.TO_EMAIL ?? 'default@gmail.com';
 const FROM_EMAIL = process.env.FROM_EMAIL ?? 'default@gmail.com';
-
-
 
 export async function SendEmail() {
 async function sendEmail(){
-    // const oData = await request.json();
     const oData = {data: {
         email: "gallagherpatrick21@gmail.com",
     }}
@@ -26,8 +22,7 @@ async function sendEmail(){
     try {
         await sgMail.send(msg);
     } catch (error) {
-        console.error(error);
-        
+        console.error(error);  
     }
 }
     return(
