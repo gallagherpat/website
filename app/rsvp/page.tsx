@@ -12,7 +12,7 @@ const object = {
         {
             "event": "Ceremony",
             "date": "Sunday, September 29th, 2024",
-            "time": "3:00pm",
+            "time": "5:00pm",
             "name": "The House on Barber Mill",
             "location": "2239 Barber Mill Rd, Clayton, NC 27520",
             "description": "This will be held on the outside of the house"
@@ -28,7 +28,7 @@ const object = {
         {
             "event": "Cocktail Hour",
             "date": "Sunday, September 29th, 2024",
-            "time": "5:30pm",
+            "time": "6:30pm",
             "name": "The House on Barber Mill",
             "location": "2239 Barber Mill Rd, Clayton, NC 27520",
             "description": "Drinks and good times sure to come"

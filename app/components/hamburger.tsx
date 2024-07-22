@@ -20,6 +20,7 @@ export default function Hamburger() {
         <a className={currentPage("/schedule")} href="/schedule">Schedule</a>
         <a className={currentPage("/gallery")} href="/gallery">Gallery</a>
         <a className={currentPage("/rsvp")} href="/rsvp">RSVP</a>
+        <a className={currentPage("/qa")} href="/qa">Q&A</a>
         </main>
     )
 }
