@@ -30,7 +30,7 @@ export default function Page() {
                 <SubHeader/>
             </div>
             {data.map((qaData, index) => (
-                <QACard data={qaData} index={index}/>
+                <QACard key={index} data={qaData} index={index}/>
             ))}
         </main>
     )
