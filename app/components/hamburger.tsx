@@ -21,6 +21,7 @@ export default function Hamburger() {
         <a className={currentPage("/gallery")} href="/gallery">Gallery</a>
         <a className={currentPage("/rsvp")} href="/rsvp">RSVP</a>
         <a className={currentPage("/qa")} href="/qa">Q&A</a>
+        <a className={currentPage("/Registry")} href="https://www.amazon.com/wedding/registry/K6SNSHTMWE1V">Registry</a>
         </main>
     )
 }

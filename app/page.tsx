@@ -3,20 +3,8 @@ import Image from 'next/image';
 import CountDownTimer from './components/countDownComponent';
 import Section from './components/section';
 
-
 export default function Home() {
   const weddingDate = new Date("2024-09-29");
-
-  // const users = async function getUsers() {
-  //   const req = await fetch('/api/getUsers');
-  //   const res = await req.json();
-  //   const data = await res;
-
-  //   console.log(data);
-
-  //   return users
-  // }
-
   return (
     <main className="flex min-h-screen pb-12 flex-col items-center justify-between">
       <div className='relative object-cover px-auto w-full h-[480px] md:h-[560px]'>
