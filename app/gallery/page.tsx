@@ -6,6 +6,10 @@ import SubHeader from '../components/subHeader'
 
 export default function Page() {
     const env = process.env.NODE_ENV;
+    let tmp = [];
+    for (let i = 0; i < 173; i++) {
+        tmp.push(i);
+    }
     const [images, setImages] = useState([]);
     const [counter, setCounter] = useState(0);
     const [load, setLoad] = useState(true);
@@ -45,9 +49,9 @@ export default function Page() {
             </div>
             <section className="w-11/12 md:w-10/12 lg:w-1/2 px-4 mx-auto mt-8">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {images.map((image, index) => (
-                        <NewImageTile modalHandler={modalHandler} setCounter={setCounter} key={index} index={index} image={image} src={src}/>
-                    ))}
+                {tmp.map((index) => (
+                <NewImageTile modalHandler={modalHandler} setCounter={setCounter} key={index} index={index} src={src}/>
+                ))}
                 </div>
             </section>
         </>

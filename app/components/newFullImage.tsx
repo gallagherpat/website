@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 //@ts-ignore
 export default function NewFullImage(props) {
-    const imgSrc = `/images/gallery/image_${props.counter}.jpg`
+    const imgSrc = `/images/gallery/image_ (${props.counter}).jpg`
     const images = props.images;
     const counter = props.counter;
     const modalHandler = props.modalHandler;
