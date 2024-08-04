@@ -13,8 +13,8 @@ export default function Profile(props){
             className="rounded-full mx-auto"
             src={image}
             alt="Picture of Patrick"
-            width={200}
-            height={100}
+            width={250}
+            height={150}
             />
             <h3>{props.name} {props.lastName}</h3>
             <p>{props.partyMember}</p>
