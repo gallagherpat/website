@@ -81,7 +81,8 @@ export default function ScheduleCard(props){
                 <a className="hover:underline" target="_blank" href={linkToMap}>{data.location}</a>
                 <p className="my-4">{data.description}</p>
                 <div className="text-white">
-                    <button disabled={true} className="w-48 h-12 bg-zinc-400 m-3 rounded hover:bg-zinc-400">RSVP</button>
+                <Link target="_blank" rel="noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSe8HqtvR5iqQrhnLVshpve3HX2vdAxs8lF-x6zNxYE2ypeNRg/viewform?vc=0&c=0&w=1&flr=0"><button className="w-48 h-12 bg-zinc-700 m-3 rounded hover:bg-zinc-900">RSVP</button></Link>
+                    {/* <button disabled={true} className="w-48 h-12 bg-zinc-400 m-3 rounded hover:bg-zinc-400">RSVP</button> */}
                 </div>  
                 {/* <div className="text-white">
                     <button disabled={false} onClick={() => {setModal(false); setCurrentCard(data.event)}} className="w-48 h-12 bg-zinc-800 m-3 rounded hover:bg-zinc-400">RSVP</button>
