@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 //@ts-ignore
 export default function NewFullImage(props) {
+    const imgSrc = `/images/gallery/image_${props.counter}.jpg`
     const images = props.images;
     const counter = props.counter;
     const modalHandler = props.modalHandler;
@@ -39,7 +40,8 @@ export default function NewFullImage(props) {
               </div>
                     <Image
                     className='relative object-contain mx-auto py-24 w-full h-full max-w-2xl'
-                    src={props.src + images[counter].attributes.image.data.attributes.url}
+                    src={imgSrc}
+                    // src={props.src + images[counter].attributes.image.data.attributes.url}
                     alt="Image"
                     width={500}
                     height={500}

@@ -2,6 +2,7 @@ import Image from 'next/image'
 //@ts-ignore
 export default function NewImageTile(props) {
     let image = props.image;
+    const imgSrc = `/images/gallery/image_${props.index}.jpg`
     const imageUrl = image.attributes.image.data.attributes.url
     const h = image.attributes.image.data.attributes.height;
     const w = image.attributes.image.data.attributes.width;
@@ -21,7 +22,7 @@ export default function NewImageTile(props) {
             }}>
                 <Image
                 className={imageClass}
-                src={props.src + imageUrl}
+                src={imgSrc}
                 alt={image.attributes.image.data.attributes.name}
                 width={300}
                 height={300}
