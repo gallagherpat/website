@@ -9,9 +9,8 @@ export default function NewImageTile(props) {
     let className = 'row-span-2 rounded-lg';
     const imageClass = "transition duration-150 ease-in-out rounded-lg object-cover h-full hover:scale-125 hover:z-20 origin-center";
     return (
-        <>
             <button className={className} onClick={() => {
-                console.log(props.index)
+                console.log(props.index);
                 setCounter(props.index);
                 modalHandler()
             }}>
@@ -24,6 +23,5 @@ export default function NewImageTile(props) {
                 unoptimized
                 />
             </button>
-        </>
     )
 }
