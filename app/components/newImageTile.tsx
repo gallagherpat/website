@@ -1,8 +1,8 @@
 import Image from 'next/image'
 //@ts-ignore
 export default function NewImageTile(props) {
-    let image = props.image;
-    const imgSrc = `/images/gallery/image_ (${props.index}).jpg`
+    // let image = props.image;
+    const imgSrc = `/images/gallery/image_ (${props.index}).jpg`;
     //const imageUrl = image.attributes.image.data.attributes.url
     const setCounter = props.setCounter;
     const modalHandler = props.modalHandler;
@@ -11,8 +11,9 @@ export default function NewImageTile(props) {
     return (
         <>
             <button className={className} onClick={() => {
-                modalHandler()
+                console.log(props.index)
                 setCounter(props.index);
+                modalHandler()
             }}>
                 <Image
                 className={imageClass}

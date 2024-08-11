@@ -22,27 +22,7 @@ export default function Page() {
         setModalOpen(!isModalOpen)
         return isModalOpen
     }
-    async function getImages() {
-        try {
-          const reqHeaders = new Headers();
-          reqHeaders.append('Content-Type', 'application/json');
-          const req = await fetch('/api/getImages', {
-            method: 'POST',
-            body: JSON.stringify({ position: "hello" }),
-          });
-          const res = await req.json();
-          setImages(res.data);
-
-          setLoad(false);
-        } catch (error) {
-          console.error('Error fetching images:', error);
-        }
-      }
-    useEffect(() =>{
-        getImages()
-    },[])
-    if(!load){
-        return (<>
+    return (<>
         <NewFullImage isModalOpen={isModalOpen} modalHandler={modalHandler} images={images} setCounter={setCounter} counter={counter} src={src}/>
         <div className="block sm:hidden pt-4">
                 <SubHeader/>
@@ -50,11 +30,10 @@ export default function Page() {
             <section className="w-11/12 md:w-10/12 lg:w-1/2 px-4 mx-auto mt-8">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 {tmp.map((index) => (
-                <NewImageTile modalHandler={modalHandler} setCounter={setCounter} key={index} index={index} src={src}/>
+                 <NewImageTile modalHandler={modalHandler} setCounter={setCounter} key={index} index={index} src={src}/>
                 ))}
                 </div>
             </section>
         </>
         )
-    }
 }
